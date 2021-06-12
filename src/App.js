@@ -3,6 +3,7 @@ import './App.css';
 import Navbar from './components/Navbar';
 import Card from './components/Card';
 import Ranking from './components/Ranking';
+import Podium from './components/Podium';
 
 function App() {
   
@@ -11,6 +12,11 @@ function App() {
   useEffect(() => {
     handlePopulateCharacters()
   }, []);
+
+
+  function sortCharacterByVotes(a, b) {
+    return b.votes > a.votes;
+}
 
   async function handlePopulateCharacters() {
     const response = await fetch('https://www.breakingbadapi.com/api/characters?limit=10&offset=10', {
@@ -60,11 +66,14 @@ function App() {
   return (
     <div className="app">
       <Navbar />
+      <h1>Podium</h1>
+      <Podium characters={characters} sortCharacterByVotes={sortCharacterByVotes}/>
+      <h1>Vote no seu personagem</h1>
       <div className="container">
         <div className="character-list">
-          <Card characters={characters} handleAddVote={handleAddVote}/>
+          <Card characters={characters} handleAddVote={handleAddVote} showButtons />
         </div>
-        <Ranking characters={characters}/>
+        <Ranking characters={characters} sortCharacterByVotes={sortCharacterByVotes}/>
       </div>
     </div>
   );

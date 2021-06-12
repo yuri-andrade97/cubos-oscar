@@ -1,6 +1,6 @@
 import './style.css';
 
-function Card({ characters, handleAddVote }) {
+function Card({ characters, handleAddVote, showButtons }) {
     return (
         <>
             { characters.map(item => (
@@ -9,16 +9,19 @@ function Card({ characters, handleAddVote }) {
                     <h3>{item.name}</h3>
                     <img src={item.img} alt="" className="img-character"/>
 
-                    <div className="buttons-card">
-                        <button
-                            className="button-green" 
-                            onClick={() => handleAddVote(1, item.id)}
-                         >+</button>
-                        <button 
-                            className="button-red" 
-                            onClick={() => handleAddVote(-1, item.id)}
-                        >-</button>
-                    </div>
+                    {showButtons && 
+                        <div className="buttons-card">
+                            <button
+                                className="button-green" 
+                                onClick={() => handleAddVote(1, item.id)}
+                            >+</button>
+                            <button 
+                                className="button-red" 
+                                onClick={() => handleAddVote(-1, item.id)}
+                            >-</button>
+                        </div>
+                    }
+
 
                 </div>
                 ))

@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import './style.css';
 
-function Ranking({ characters }) {
+function Ranking({ characters, sortCharacterByVotes }) {
 
     const [ranking, setRanking] = useState([])
    
@@ -13,10 +13,6 @@ function Ranking({ characters }) {
         setRanking(ordered);
     }, [characters]);
 
-
-    function sortCharacterByVotes(a, b) {
-        return b.votes > a.votes;
-    }
 
     return (
         <div className="container-ranking">

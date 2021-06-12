@@ -1,0 +1,48 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #dddddd;
+    width: 180px;
+    height: auto;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.card h3 {
+    margin: 10px 0;
+}
+
+.img-character {
+    width: 180px;
+    height: 250px;
+}
+
+.buttons-card {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 40px;
+}
+
+.buttons-card button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    height: 30px;
+    cursor: pointer;
+    color: white;
+    font-size: 30px;
+    border-radius: 7px;
+}
+
+.button-green {
+    background-color: green;
+}
+
+.button-red {
+    background-color: red;
+}

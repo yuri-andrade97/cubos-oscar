@@ -1,0 +1,10 @@
+.container-ranking {
+    width: 400px;
+    margin-right: 20px;
+    padding: 20px;
+}
+
+.character-ranking {
+    display: flex;
+    justify-content: space-between;
+} 
